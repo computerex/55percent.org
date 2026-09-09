@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="55percent — an interactive exercise in making dispossession feel personal." />
+  <title>55percent — Your home, reallocated</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain"></div>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="55percent home"><span>55</span>percent</a>
+    <div class="progress-wrap" aria-label="Experience progress"><span id="stepLabel">01 / 06</span><div class="progress"><i id="progressBar"></i></div></div>
+    <button class="quiet-button" id="restartButton" type="button">Start over</button>
+  </header>
+
+  <main id="top">
+    <section class="screen hero-screen active" data-screen="0">
+      <div class="eyebrow">A very reasonable request</div>
+      <h1>We need<br><em>55%</em> of your home.</h1>
+      <p class="intro">Not to worry. You may continue living in the remaining portion. We have historical reasons.</p>
+      <button class="primary-button next-button" type="button">See the allocation <span>↗</span></button>
+      <div class="scroll-note">An interactive analogy <span>↓</span></div>
+    </section>
+
+    <section class="screen allocation-screen" data-screen="1">
+      <div class="screen-grid">
+        <div class="copy-column"><div class="eyebrow">Step 02 — The allocation</div><h2>It’s only<br><em>a little</em><br>more than half.</h2><p>We’ve marked your home according to a perfectly calm and official-looking division.</p></div>
+        <div class="house-card"><div class="house-label"><span>Your home</span><strong>100 m²</strong></div><div class="house-visual"><div class="allocation-fill claimed-part"><span>55%</span><small>Our share</small></div><div class="allocation-fill yours-part"><span>45%</span><small>Your share</small></div><div class="house-outline"><div class="roof"></div><div class="wall left-wall"></div><div class="wall right-wall"></div><div class="door"></div><div class="window one"></div><div class="window two"></div></div><div class="divide-line"></div></div><div class="ruler"><span>0</span><span>50</span><span>100</span></div></div>
+      </div><button class="text-button next-button" type="button">I have a concern <span>→</span></button>
+    </section>
+
+    <section class="screen objections-screen" data-screen="2">
+      <div class="eyebrow">Step 03 — Your concerns</div><h2>We value your<br><em>feedback.</em></h2>
+      <div class="objection-list"><button class="objection" data-response="We understand. The allocation is still 55%."><span>I don’t consent.</span><b>+</b></button><button class="objection" data-response="Your concerns have been carefully noted in a folder marked ‘concerns’."><span>But I live here.</span><b>+</b></button><button class="objection" data-response="That is a beautiful history. The allocation remains unchanged."><span>My family has lived here for generations.</span><b>+</b></button></div>
+      <p class="response" id="response" aria-live="polite"></p><button class="text-button next-button" type="button">I still don’t understand <span>→</span></button>
+    </section>
+
+    <section class="screen address-screen" data-screen="3">
+      <div class="centered-copy"><div class="eyebrow">Step 04 — Administrative details</div><h2>To complete the transfer,<br>please provide your <em>address.</em></h2><p>We promise to do absolutely nothing nefarious with it.</p><form id="addressForm"><label for="address">Your home address</label><div class="fake-input"><input id="address" value="123 Your Street" autocomplete="off" /><span>⌖</span></div><button class="primary-button" type="submit">Submit address <span>↗</span></button></form><p class="form-response" id="formResponse" aria-live="polite"></p></div>
+    </section>
+
+    <section class="screen reveal-screen" data-screen="4">
+      <div class="reveal-layout"><div><div class="eyebrow">Step 05 — A small correction</div><h2>Actually,<br>we don’t need<br>your <em>address.</em></h2><p>You wouldn’t give us 55% anyway.</p><button class="primary-button next-button" type="button">One last thing <span>↗</span></button></div><div class="stamp">DECLINED<br><small>on grounds of common sense</small></div></div>
+    </section>
+
+    <section class="screen ending-screen" data-screen="5">
+      <div class="ending-copy"><div class="eyebrow">Step 06 — The point</div><div class="big-number">55<span>%</span></div><h2>It feels different when<br>the map is <em>your home.</em></h2><p>A political map can make dispossession look abstract. For the people living on the land, it was home.</p><div class="ending-rule"></div><p class="note">This experience is an analogy, not a complete history. Read the history. Challenge the analogy. Ask whose consent mattered.</p><div class="ending-actions"><a href="https://en.wikipedia.org/wiki/Israeli%E2%80%93Palestinian_conflict" target="_blank" rel="noreferrer">Learn what 55% refers to ↗</a><button class="outline-button" id="endingRestart" type="button">Experience again</button></div></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

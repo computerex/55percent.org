@@ -1,0 +1,22 @@
+server {
+    listen 80;
+    server_name 55percent.org www.55percent.org;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    listen 443 ssl;
+    server_name 55percent.org www.55percent.org;
+
+    root /var/www/55percent;
+    index index.html;
+
+    ssl_certificate /root/55percent.org-cert/fullchain.pem;
+    ssl_certificate_key /root/55percent.org-cert/privkey.pem;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+}
